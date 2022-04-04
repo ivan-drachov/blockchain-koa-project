@@ -1,0 +1,12 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "vVMKzVQc2Y53Akpe",
+    "database": "ac_pg",
+    "host": "ac_pg",
+    "dialect": "postgres",
+    "logging": false
+  },
+  "test": {},
+  "production": {}
+}

@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  ac_pg:
+    image: "sameersbn/postgresql:12-20200524"
+    container_name: ac_pg
+    hostname: ac_pg
+    restart: always
+    env_file: "./docker_environments"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./ac_pg_data:/var/lib/postgresql
+    shm_size: 700m
+
+  ac_app:
+    container_name: ac_app
+    hostname: ac_app
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100k"
+        max-file: "5"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8080/swagger-html" ]
+      interval: 60s
+      timeout: 30s
+      retries: 5
+    build: ./
+    volumes:
+      - .:/ac_app
+    ports:
+      - "8080:8080"
+    env_file: "./docker_environments"
+

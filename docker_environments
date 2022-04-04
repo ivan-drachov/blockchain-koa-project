@@ -1,0 +1,8 @@
+DB_USER=postgres
+DB_PASS=vVMKzVQc2Y53Akpe
+DB_NAME=ac_pg
+PG_TRUST_LOCALNET=true
+ENV=dev
+DB_HOST=ac_pg
+DB_PORT=5432
+

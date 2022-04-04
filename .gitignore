@@ -1,0 +1,9 @@
+node_modules/
+/**/*.log
+/build/*
+.DS_Store
+.idea
+.npm
+.env
+ac_pg_data/
+data/*.json
